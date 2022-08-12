@@ -13,4 +13,4 @@ root= 7
 4<7 => 4<5 => 4>1 => 4>3 rootun ve 5 in solunda 1 in ve 3 ün sağında bulunur.
 2<7 => 2<5 => 2>1 => 2<3 rootun ve in solunda in sağında 3 ün solunda bulunur.
 ```
-
+[Buradan](https://app.patika.dev/exthia) patika profilime ulaşabilirsiniz.
