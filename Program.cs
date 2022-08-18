@@ -1,71 +1,72 @@
 ﻿using System;
 
-namespace neden
+namespace tip_dönüşümleri
 {
     class Program
     {
-        
-
         static void Main(string[] args)
         {
+            // Implicit (bilinçsiz)  dönüşüm
+            byte a = 5;
+            sbyte b = 10;
+            short c = 10;
 
-        int x = 3;
-        int y = 3;
-        y = y+2;
-        Console.WriteLine(y);
-        y += 2;
-        Console.WriteLine(y);
-        y /= 1;
-        Console.WriteLine(y);
-        x *= 2;
-        Console.WriteLine(x);
+            int d = a+b+c;
+            Console.WriteLine("d:" + d);
+            long h = d;
+            Console.WriteLine("h:" + h);
+            float i = h;
+            Console.WriteLine("i:" + i);
+            string e = "zikriye";
+            char f = 'k';
+            object g = e+f+d;
+            Console.WriteLine("g:" + g);
+            //Explicit(bilinçli) dönüşüm
+            byte x = 4;
+            byte y = (byte)x;
+            Console.WriteLine("y:" + y);
+            int z = 100;
+            byte t =(byte)z;
+            Console.WriteLine("t:" + t);
 
-        //mantıksal operatorler
-        // || && !
-        bool isSucces= true;
-        bool isCompleted = false;
-        if(isSucces && isCompleted)
-        Console.WriteLine("Perfect!");
-        if(isSucces || isCompleted)
-        Console.WriteLine("Great");
-        if(isSucces && !isCompleted)
-        Console.WriteLine("Whatever!");
-        //ilişkise operatorler
-        // < > ==  <= >=   !=
-        int a = 3;
-        int b =4;
-        bool sonuç = a<b;
-        Console.WriteLine(sonuç);
-        sonuç = a>b;
-        Console.WriteLine(sonuç);
-        sonuç = a<=b;
-        Console.WriteLine(sonuç);
-        sonuç = a>=b;
-        Console.WriteLine(sonuç);
-        sonuç = a!=b;
-        Console.WriteLine(sonuç);
-        sonuç= a==b;
-        Console.WriteLine(sonuç);
-        //Aritmetik operatorler + - * / 
-        int sayı1 = 10;
-        int sayı2 = 5;
-        int sonuç1 = sayı1 / sayı2;
-        Console.WriteLine(sonuç1);
-        sonuç1 = sayı1* sayı2;
-        Console.WriteLine(sonuç1);
-        sonuç1 = sayı1 + sayı2;
-        Console.WriteLine(sonuç1);
-        sonuç1 = sayı1++ ;
-        Console.WriteLine(sonuç1);
-        //% mod(kalan) alır
-        int sonuç2 = 20%3;
-        Console.WriteLine(sonuç2);
+            float w =10.3f;
+            byte v = (byte)w;
+            Console.WriteLine("v:" + v);
+            // ToString metodu
+            int xx = 6;
+            string yy= xx.ToString();
+            Console.WriteLine("yy" +xx);
+            string zz = 12.5.ToString();
+            Console.WriteLine("zz:" + zz);
+            //System.Convert
+            string s1 = "10" , s2="20";
+            int sayı1, sayı2;
+            int toplam;
+            sayı1 = Convert.ToInt32(s1);
+            sayı2 = Convert.ToInt32(s2);
+            toplam = sayı1 + sayı2;
+            Console.WriteLine(toplam);
+            //Parse (sadece string alır ve string dönüştürür)
+            ParseMethod();
 
 
+            Console.ReadKey();
+        }
+        public static void ParseMethod()
+        {
+            string metin1 = "10";
+            string metin2 = "10.2";
+            int rakam1;
+            double double1;
+
+            rakam1 = Int32.Parse(metin1);
+            Console.WriteLine(rakam1);
+            double1 = Double.Parse(metin2);
+            Console.WriteLine(metin2);
 
 
-        Console.ReadKey();
-       //https:app.patika.dev/exthia
-        }    
+
+
+        }
     }
 }
